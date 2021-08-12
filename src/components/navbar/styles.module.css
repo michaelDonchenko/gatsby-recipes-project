@@ -1,0 +1,34 @@
+.brand {
+  text-decoration: none;
+  color: rgb(0, 102, 204);
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 0.8rem;
+  text-shadow: teal 1px 1px;
+}
+
+.link {
+  text-decoration: none;
+  color: gray;
+  font-size: 1.2rem;
+  padding: 0.8rem;
+}
+
+.link:hover {
+  color: #444444;
+}
+
+.brand:hover {
+  color: rgb(0, 64, 128);
+}
+
+.icon {
+  cursor: pointer;
+  color: gray;
+  float: right;
+}
+
+.active {
+  color: rgb(0, 102, 204);
+  text-shadow: teal 1px 1px;
+}

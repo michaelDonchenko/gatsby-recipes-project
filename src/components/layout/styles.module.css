@@ -1,0 +1,16 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.container {
+  flex-grow: 1;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
