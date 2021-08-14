@@ -4,8 +4,19 @@ import React from "react"
 import * as styles from "./styles.module.css"
 import { StyledNav } from "./styles"
 import MenuIcon from "@material-ui/icons/Menu"
+import PhoneMenu from "./PhoneMenu"
 
 const Navbar = () => {
+  const [open, setOpen] = React.useState(false)
+
+  const handleClickOpen = () => {
+    setOpen(true)
+  }
+
+  const handleClose = () => {
+    setOpen(false)
+  }
+
   return (
     <StyledNav>
       <Container maxWidth="lg">
@@ -46,6 +57,7 @@ const Navbar = () => {
 
         <Hidden mdUp>
           <span
+            onClick={handleClickOpen}
             style={{
               fontSize: "20px",
               display: "flex",
@@ -58,6 +70,8 @@ const Navbar = () => {
             <MenuIcon />
           </span>
         </Hidden>
+
+        <PhoneMenu open={open} handleClose={handleClose} />
       </Container>
     </StyledNav>
   )
