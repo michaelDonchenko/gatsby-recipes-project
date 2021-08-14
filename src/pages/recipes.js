@@ -4,6 +4,7 @@ import RecipesQuery from "../graphql/RecipesQuery"
 import RecipesList from "../components/recipes/RecipesList"
 import TagsList from "../components/recipes/TagsList"
 import { Main, StyledH1, RecipesDiv, TagsDiv } from "../styles/recipes"
+import SEO from "../components/SEO"
 
 const Recipes = () => {
   const [width, setWidth] = useState(window.innerWidth)
@@ -22,6 +23,8 @@ const Recipes = () => {
 
   return (
     <Layout>
+      <SEO title="Recipes page" />
+
       <StyledH1>All Recipes</StyledH1>
       <Main width={width}>
         <TagsDiv width={width}>

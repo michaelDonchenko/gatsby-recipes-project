@@ -5,6 +5,7 @@ import setupTags from "../utils/setupTags"
 import { FlexWrapDiv } from "../styles/recipes"
 import Primary from "../components/buttons/primary"
 import { Link } from "gatsby"
+import SEO from "../components/SEO"
 
 const tags = () => {
   const {
@@ -15,6 +16,7 @@ const tags = () => {
 
   return (
     <Layout>
+      <SEO title="Tags page" />
       <FlexWrapDiv style={{ marginTop: "1rem" }}>
         {tags.map((tag, i) => {
           return (

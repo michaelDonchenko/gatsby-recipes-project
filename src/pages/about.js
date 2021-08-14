@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { ColumnDiv, Main, StyledText, StyledH1 } from "../styles/about"
 import Primary from "../components/buttons/primary"
+import SEO from "../components/SEO"
 
 const About = () => {
   const [width, setWidth] = useState(window.innerWidth)
@@ -20,6 +21,7 @@ const About = () => {
 
   return (
     <Layout>
+      <SEO title="About page" />
       <Main width={width}>
         <ColumnDiv width={width}>
           <StyledH1>About us</StyledH1>

@@ -12,7 +12,7 @@ const TagsList = ({ recipes }) => {
       {tags.map((tag, i) => {
         const [text, value] = tag
         return (
-          <Link to={`/tags/${text}`} style={{ textDecoration: "none" }}>
+          <Link key={i} to={`/tags/${text}`} style={{ textDecoration: "none" }}>
             <StyledText>{`${text} (${value})`}</StyledText>
           </Link>
         )

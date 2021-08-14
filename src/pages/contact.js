@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import ContactForm from "../components/contanct-form/ContactForm"
 import Layout from "../components/layout/layout"
 import { StyledH1, Main, ColumnDiv, StyledText } from "../styles/contact"
+import SEO from "../components/SEO"
 
 const Contact = () => {
   const [width, setWidth] = useState(window.innerWidth)
@@ -18,6 +19,7 @@ const Contact = () => {
 
   return (
     <Layout>
+      <SEO title="Contact page" />
       <Main width={width}>
         <ColumnDiv width={width}>
           <StyledH1>Want to get in touch?</StyledH1>

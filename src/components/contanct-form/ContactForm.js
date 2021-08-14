@@ -8,27 +8,48 @@ import {
   FormGroup,
   StyledTextArea,
 } from "./styles"
+import { useForm, ValidationError } from "@formspree/react"
+import { StyledText } from "../../styles/recipes"
 
 const ContactForm = () => {
-  const handleSubmit = e => {
-    e.preventDefault()
+  const [state, handleSubmit] = useForm("xeqvponn")
+  if (state.succeeded) {
+    return <StyledText color="green">Message sent succefully!</StyledText>
   }
 
   return (
     <FlexDiv>
       <Paper elevation={2}>
-        <StyledForm onSubmit={handleSubmit}>
+        <StyledForm
+          action="https://formspree.io/f/xeqvponn"
+          method="POST"
+          onSubmit={handleSubmit}
+        >
           <FormGroup>
-            <label for="email">Your Email:</label>
+            <label htmlFor="email">Your Email:</label>
             <StyledInput name="email" type="email" required />
+
+            <ValidationError
+              prefix="Email"
+              field="email"
+              errors={state.errors}
+            />
           </FormGroup>
 
           <FormGroup>
-            <label for="message">Message:</label>
+            <label htmlFor="message">Message:</label>
             <StyledTextArea name="message" type="text" required />
+
+            <ValidationError
+              prefix="Message"
+              field="message"
+              errors={state.errors}
+            />
           </FormGroup>
 
-          <StyledButton type="submit">Submit</StyledButton>
+          <StyledButton type="submit" disabled={state.submitting}>
+            {state.submitting ? "Loading.." : "Submit"}
+          </StyledButton>
         </StyledForm>
       </Paper>
     </FlexDiv>

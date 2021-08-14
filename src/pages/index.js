@@ -4,11 +4,10 @@ import { StaticImage } from "gatsby-plugin-image"
 import { Hero, HeroText, StyledH1, StyledH3 } from "../styles/home"
 import Primary from "../components/buttons/primary"
 import { Link } from "gatsby"
-// import SiteMetadata from "../graphql/SiteMetadata"
+import SEO from "../components/SEO"
 
 const Index = () => {
   const [width, setWidth] = useState(window.innerWidth)
-  // const { site } = SiteMetadata() //site metadata fetch
 
   const handleResize = () => {
     setWidth(window.innerWidth)
@@ -22,11 +21,11 @@ const Index = () => {
 
   return (
     <Layout>
+      <SEO title="Home Page" />
       <Hero>
         <StaticImage
           alt="meat"
           src="../images/hero-img.jpg"
-          placeholder="blurred"
           layout="fullWidth"
           style={{ borderRadius: "8px" }}
         />
