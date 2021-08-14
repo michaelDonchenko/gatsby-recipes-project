@@ -5,16 +5,21 @@ import { StyledH1, Main, ColumnDiv, StyledText } from "../styles/contact"
 import SEO from "../components/SEO"
 
 const Contact = () => {
-  const [width, setWidth] = useState(window.innerWidth)
+  const [width, setWidth] = useState(
+    typeof window !== "undefined" && window.innerWidth
+  )
 
   const handleResize = () => {
-    setWidth(window.innerWidth)
+    setWidth(typeof window !== "undefined" && window.innerWidth)
   }
 
   useEffect(() => {
-    window.addEventListener("resize", handleResize)
+    typeof window !== "undefined" &&
+      window.addEventListener("resize", handleResize)
 
-    return () => window.removeEventListener("resize", handleResize)
+    return () =>
+      typeof window !== "undefined" &&
+      window.removeEventListener("resize", handleResize)
   }, [])
 
   return (

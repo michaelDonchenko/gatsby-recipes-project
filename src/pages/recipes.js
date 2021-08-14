@@ -7,14 +7,19 @@ import { Main, StyledH1, RecipesDiv, TagsDiv } from "../styles/recipes"
 import SEO from "../components/SEO"
 
 const Recipes = () => {
-  const [width, setWidth] = useState(window.innerWidth)
+  const [width, setWidth] = useState(
+    typeof window !== "undefined" && window.innerWidth
+  )
 
   const handleResize = () => {
-    setWidth(window.innerWidth)
+    setWidth(typeof window !== "undefined" && window.innerWidth)
   }
   useEffect(() => {
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
+    typeof window !== "undefined" &&
+      window.addEventListener("resize", handleResize)
+    return () =>
+      typeof window !== "undefined" &&
+      window.removeEventListener("resize", handleResize)
   }, [])
 
   const {
